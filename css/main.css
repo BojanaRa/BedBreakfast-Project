@@ -1,18 +1,16 @@
-/*! HTML5 Boilerplate v7.0.1 | MIT License | https://html5boilerplate.com/ */
+/*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
 
-/* main.css 1.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
 
- 
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
 
-   html {
+html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
@@ -27,6 +25,11 @@
  *
  * Customize the background color to match your design.
  */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
 
 ::selection {
     background: #b3d4fc;
@@ -90,34 +93,674 @@ textarea {
     padding: 0.2em 0;
 }
 
-
-
-
- /* ==========================================================================
+/* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-
-.logo {
-  font-size: 36pt;
-
+* {
+    box-sizing: border-box;  
 }
 
+body {
+    margin: 0; /* Resetuje margine za ceo body na 0, tako da je sam pocetak tacno uz ivicu ekrana */
+    font-size: 62.5%; /* Font velicina u em-ovima. Primer: 16px je 1.6em */
+    font-weight: 300; /* Debljina fonta je default 300 */
+    color: #191919; /* Boja svih fontova koji su uzimaju default vrednost bez dodatnih parametara */
+    font-family: 'Noto Serif', serif; /* Pozivanje importovanog Google Fonta, "serif" je zamena ukoliko se ne ucita prvi font */
+}
+
+section {
+    padding: 35px 0px; /* Sve sekcije da imaju gore i dole padding po 35px */
+}
+
+.container {
+    max-width: 1360px; /* Maksimalna visina 1336px + dole padding left/right 15px */
+    padding-left: 15px; /* Odvaja unutar div-a za 15px sa leve strane */
+    padding-right: 15px; /* Odvaja unutar div-a za 15px sa desne strane */
+    margin: 0 auto; /* Resetuje sve margine i stavlja .container div na sredinu horizontalno */
+}
+
+h1 {
+    font-size: 5em; /* Velicina fonta u px je 50px */
+    color: #fff; /* Boja fonta je bela */
+}
+
+h2 {
+    font-size: 4.8em; /* Velicina fonta u px je 48px */
+    text-align: center; /* Da svi h2 tagovi budu centrirani na sredinu */
+    font-weight: 100; /* Debljina fonta light */
+}
+
+h3 {
+    font-size: 3em; /* Velicina fonta u px je 30px */
+    text-align: center; /* Da svi h2 tagovi budu centrirani na sredinu */
+}
+
+h4 {
+    font-size: 3em; /* Velicina fonta 30px */
+    font-weight: bold; /* Boldovan font */
+}
+
+p {
+    font-size: 1.8em; /* Velicina fonta za paragrafe je u px 18px */
+}
+
+a {
+    text-decoration: none; /* Da obrise na sve linkove underline liniju koju imaju svi linkovi po defaulty */
+}
+
+/* CTA Button */
+.ctaButton {
+    position: relative; /* Relativmna pozicija u okviru dugmeta */
+    width: 265px; /* Sirina dugmeta */
+    height: 60px; /* Visina dugmeta */
+    color: #fff; /* Boja fonta na dugmetu */
+    background-color: #26bdb3; /* Boja dugmeta */
+    border: 0; /* Iskljuciti okvir okolo dugmeta */
+    font-size: 1.8em; /* Postaviti 18px font na dugmetu */
+}
+
+.ctaButton:hover {
+    cursor: pointer; /* Kada predjes misem preko dugmeta, da se pojavi prst umesto strelice */
+    background-color: #25aca4; /* Promena boje kada se predje kursorom preko dugmeta */
+}
+
+.ctaButton:focus {
+    outline: 0; /* Nakon klika da ne postoji plavi border koji se automatski postavlja */
+}
+
+.fa-angle-right {
+    font-size: 1.5em; /* Velicina strelice koju smo povukli sa Awesome Icon */
+    vertical-align: middle; /* Centriraj vertikalno na sredinu zajedno sa tekstom */
+}
+
+/* Navigation */
+.header {
+    position: relative; /* Relativna pozicija za .header div */
+    width: 100%; /* Sirina 100% na svakoj velicina ekrana */
+    background-color: #fff; /* Postavi boju navigacije na belu */
+    padding: 15px 0px; /* Napravi razmak izmedju topa i bottom po 15px, sa leve i desne strane da bude 0px */
+}
+
+.headerLogo {
+    font-size: 4em; /* Velicina fonta za header */
+    color: #26bdb3; /* Boja logo naslova */
+    font-weight: 700; /* Debljina logo naslova da bude boldovana */
+    font-style: italic; /* Logo naslov da bude italik */
+}
+
+nav ul {
+    display: table-cell; /* Da navigaciona lista ima tabelarne celije */
+    vertical-align: middle; /* Centrirati ih na horizontalno sredinu */
+}
+
+nav a {
+    font-size: 1.8em; /* Velicina fonta za navigaciju da bude 18px */
+    line-height: 70px; /* Na mobilnoj navigaciji da razmak izmedju linkova bude 70px */
+    padding: 5px 10px; /* Navigacioni linkovi imaju padding gore i dole po 5px, desno i levo po 10px */
+    color: #000; /* Font boja da buce crna */
+}
+
+nav a:hover {
+    color: #26bdb3; /* Navigacija hover promena boje */
+}
+
+nav ul li {
+    list-style-type: none; /* Brisanje krugova sa leve strane kod liste */ 
+}
+
+.unstyle-list {
+    display: none; /* Na telefonu da sakrije horizontalnu navigaciju */
+}
+ul.unstyle-list.opening { /* kada je otvoren hamburger menu */
+    display: block; /* Display block */
+    padding: 0; /* Bez paddinga sa svih strana */
+    width: 100%; /* Sirina da bude maksimalna na uredjaju */
+    text-align: center; /* Tekst da bude centriran */
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    position: absolute; /* Absolutna pozicija u odnosu na body posto ne postoji nikakav relativni div iznad kao parent */
+    padding: 3em; /* Sa svih strana da bude ima padding po 3px */
+    top: 1em; /* Od top body bude udaljen 1em iliti 10px */
+    right: .5em; /* Da se postavi na desnu strani i ima 0.5em iliti 5px sa desne strane od desne ivice */
+    cursor: pointer; /* Kursor da bude kao prst umesto misa (iako to na telefonu nije moguce dobro je staviti) */
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    content: ''; /* Da nema nikakav kontent za after i before */
+    display: block; /* Srednja linija da stoji u sredini diva */
+    background: #2bc5bc; /* Boja hamburger ikonice */
+    height: 3px; /* Visina hamburger linije */
+    width: 2.7em; /* Sirina hamburger linije */
+    border-radius: 3px; /* Da ima zaobljenu ivicu */
+    -webkit-transition: all ease-in-out 350ms; /* Isto sto i ispod samo sa prefixom za razlicite pretrazivace */
+    transition: all ease-in-out 350ms; /* Transicija efekta da bude lagano i traje 350 mili sekunde */
+}
+
+.hamburger::before {
+    -webkit-transform: translateY(-7px); /* Isto sto i donji sa prefiksom za razlicite browsere */
+    transform: translateY(-7px); /* Da pomeri liniju za hamburger meni 7px na gore od srednje linije */
+}
+
+.hamburger::after {
+    -webkit-transform: translateY(4px); /* Isto sto i donji sa prefiksom za razlicite browsere */
+    transform: translateY(4px); /* Da pomeri liniju za hamburger meni 7px na dole od srednje linije */
+}
+
+.opened .hamburger {
+    -webkit-transform: rotate(45deg); 
+    transform: rotate(45deg); /* Rotirati srednju hamburger liniju u \ liniju na hamburger menu */
+}
+
+.opened .hamburger::before {
+    display: none; /* Kada se otvori hamburger menu, gornja linija se gubi */
+}
+
+.opened .hamburger::after {
+    -webkit-transform: translateY(0px) rotate(-90deg);
+    transform: translateY(0px) rotate(-90deg); /* Obrnuti donju hamburger liniju u suprotnom smeru od srednje i napraviti X */
+}
+
+.disable-scroll {
+    overflow: hidden !important; /* Sakrivanje skrola */
+    position: fixed; /* Fiksirana pozicija za ceo body (posto ce se tamo pozvati) */
+    width: 100%; /* Sirina da bude 100% */
+}
+
+/* Section Hero */
 .hero {
-  background-image: url(../img/naslovna.jpg);
+    background-image: url("../img/hero-background.jpg"); /* Pozadina celog headera */
+    background-repeat: no-repeat; /* Da se pozadina ne ponavlja */
+    background-attachment: scroll; /* Da se skrolla pozadina na telefonu */
+    background-size: cover; /* Velicina pozadinske slike da bude rasirena */
+    background-position: center; /* Pozicija slike na telefonu da bude centrirana */
+    min-height: calc(100vh - 70px); /* Minimalnva visina headera */
+    display: flex; /* Display da bude flex */
+    align-items: center; /* Centriraj sve iteme u .hero flex div-u na sredinu horizontalno i vertikalno */
 }
 
+.hero .container h1 {
+    font-size: 4em; /* U div-u .hero, i sledecem divu .container da h1 naslov ima velicinu 4em ili 40px; */
+}
 
+/* Section Rooms */
+section.sectionRooms {
+    padding-top: 0px;
+}
 
+.studio img, /* Slike u klasi studion */
+.grand-suite img, /* Slike u klasi grand-siutie */
+.premium-suite img { /* Slike u klasi premium-suite */
+    width: 100%; /* imaju maksimalnu sirinu 100% */
+}
 
+.studio p:nth-child(5), /* Peti child u klasi studio */
+.grand-suite p:nth-child(5), /* Peti child u klasi grand-suite */
+.premium-suite p:nth-child(5) { /* Peti child u klasi premium-suite */
+    color: #26bdb3; /* Ima plavu boju */
+    font-weight: bold; /* Font je boldovan */
+    font-size: 3em; /* Velicina fonta za price */
+}
 
+/* Section Menu */
+.sectionMenu {
+    background-color: #ebebeb; /* Pozadina Menu sekcije */
+}
+.sectionMenu .container h2 {
+    text-align: left; /* h2 title Menu da bude sa pozicioniran levo jer nam je h2 tag u general podesen na centar */
+}
 
+.menuOne,
+.menuTwo {
+    display: flex; 
+    flex-flow: column; /* Da bude poredjano u kolone */
+    align-items: center; /* Itemi su centrirani na sredinu */
+}
 
+.menuOne img, /* Slike u klasi menuOne */
+.menuTwo img { /* Slike u klasi menuTwo */
+    width: 100%; /* Imaju maksimalnu sirinu 100% */
+}
 
+.menuOne {
+    margin-bottom: 15px; /* margina na dnu diva da bude 15px */
+}
 
+/* Section Gallery */
+.slider img { /* Slike u klasi slider */
+    width: 100%; /* Imaju maksimalnu sirinu 100% */
+    max-height: 714.609px;
+}
 
+/* Gallery Slick slider */
+.slider {
+    overflow: hidden;
+}
 
- /* ==========================================================================
+.slick-dots {
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0;
+padding: 1rem 0;
+list-style-type: none; 
+}
+
+.slick-dots li {
+    margin: 0 0.25rem; 
+}
+
+.slick-dots button {
+    cursor: pointer;
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    padding: 0;
+    border: none;
+    border-radius: 100%;
+    background-color: #000;
+    text-indent: -9999px;
+    outline: none; 
+}
+
+.slick-dots li.slick-active button {
+    background-color: #26bdb3;
+    border: 2px solid #000;
+    transform: 0.3s all ease-out; 
+}
+
+/* Section Amenities */
+.sectionAmenities {
+    background-image: url("../img/Reservation-bg.jpg"); /* Pozadina celog headera */
+    background-repeat: no-repeat; /* Da se pozadina ne ponavlja */
+    background-attachment: scroll; /* Da se skrolla pozadina na telefonu */
+    background-size: cover; /* Velicina pozadinske slike da bude rasirena */
+    background-position: center; /* Pozicija slike na telefonu da bude centrirana */
+}
+
+.sectionAmenities h2 {
+    color: #fff; /* Naslov da bude bele boje */
+}
+
+.additionalServices {
+    margin: 0 auto;
+    background: #fff;
+    max-width: 870px;
+    text-align: center;
+    padding: 30px 0px;
+}
+
+.aditional img {
+    float: left;
+}
+/* Section Contact */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.contact-info h2 {
+    text-align: left;
+}
+
+.contact-info span {
+    font-size: 1.5em;
+}
+
+.contact-info a button {
+    margin-top: 50px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ebebeb;
+}
+
+.footerLogo :nth-child(2) {
+    font-size: 1.2em;
+}
+    
+.footerLogo a:first-child {
+    font-size: 3.6em;
+    font-weight: bold;
+    color: #26bdb3;
+}
+
+ul.social {
+    padding: 0;
+}
+
+ul.social li {
+    list-style-type: none;
+    line-height: 35px;
+}
+
+ul.social li a {
+    font-size: 1.8em;
+    color: #000;
+    font-weight: bold;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+ul.social li a:hover{
+    color: #26bdb3;
+}
+
+/* Modal Booking */
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.6);
+}
+
+.modal.open {
+    display: block;
+}
+
+.modal-wrap {
+    max-width: 870px;
+    width: 90%;
+    padding: 20px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90%;
+    overflow-y: auto;
+}
+
+.modal-wrap > * {
+    display: inline-block;
+}
+
+.modal-wrap .close span {
+    background-color: #24bdb3;
+}
+
+.modal-wrap h3 {
+    color: #f34949;
+    width: 100%;
+}
+
+.modal-inner {
+    margin: 0 auto;
+}
+
+.modal-inner .headerLogo {
+    text-align: center;
+}
+
+legend {
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+input {
+border: 1px solid #d6d6d6;
+width: 100%;
+padding: 20px 15px;
+margin-bottom: 20px;
+font-size: 1.6em;
+}
+
+input::placeholder {
+  color: #d6d6d6;
+  font-size: 16px;
+  font-style: italic;
+}
+
+input:focus {
+    outline: none;
+    border-color: #f34949;
+}
+
+input.ctaButton {
+    width: 100%;
+}
+
+input[type="date"]:before,
+input[type="time"]:before {
+content: attr(placeholder) !important;
+color: #d6d6d6;
+font-style: italic;
+margin-right: 0.5em;
+}
+
+.close {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: block;
+    margin: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+}
+.close:active {
+    outline: 0;
+}
+
+.close span {
+    width: 35px;
+    height: 2px;
+    background: white;
+    display: block;
+    transform: rotate(45deg);
+}
+.close span:nth-child(2) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -2px;
+}
+
+/* ==========================================================================
+   Media Query for other screen size devices
+   ========================================================================== */
+@media only screen and (min-width: 320px) {
+    html {
+        scroll-behavior: smooth;
+    }
+    /* Section Menu */
+    .menu {
+        order: 2;
+    }
+    .menu-img {
+        order: 1;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* Section Hero */
+    .hero {
+        background-attachment: fixed; /* Fiksirana pozicija za pozadinu koja daje paralax efekat pri skrolanju */
+        background-size: cover; /* Velicina pozadinske slike da bude rasirena */
+        background-position: center; /* Pozicija slike na telefonu da bude centrirana */
+    }
+    .hero .container h1 {
+        font-size: 5em; /* H1 font za hero sekciju velicina fonta na minimalnoj sirini 768px */
+    }
+
+    .hero span {
+        padding-left: 68px; /* Drugi paragraf u h1 tagu da bude odvojen od ivice 68px */
+    }
+    /* Section Animaties */
+    .sectionAmenities {
+        background-attachment: fixed; /* Fiksirana pozicija za pozadinu koja daje paralax efekat pri skrolanju */
+        background-size: cover; /* Velicina pozadinske slike da bude rasirena */
+        background-position: center; /* Pozicija slike na telefonu da bude centrirana */
+        min-height: 600px;
+    }
+
+    .additionalServices {
+        padding: 80px 0px 30px 0px;
+    }
+
+    .reception,
+    .freeWifi,
+    .freeParking {
+        width: 33.3333%;
+        float: left;
+    }
+
+    .reception img,
+    .freeWifi img,
+    .freeParking img {
+        height: 100px;
+        width: auto;
+    }
+    .reception :nth-child(2),
+    .freeWifi :nth-child(2),
+    .freeParking :nth-child(2) {
+        padding-top: 50px;
+    }
+
+    /* Section Contact */
+    .contact-info,
+    .google-map {
+        width: 50%;
+        float: left;
+    }
+
+    /* Footer */
+    footer {
+        padding: 0;
+    }
+    .footerLogo {
+        float: left;
+        padding: 20px;
+    }
+
+    .social {
+        float: right;
+        min-height: 90px;
+    }
+
+    ul.social {
+        display: flex;
+        align-items: center;
+    }
+
+    .social li {
+        float: left;
+    }
+
+    /* Modal Booking CTA */
+    form {
+        text-align: left;
+    }
+    .logo-copy-wrap {
+        float: left;
+        text-align: left;
+    }
+    input {
+        margin-right: 10px;
+        margin-left: 10px;
+        width: calc(50% - 22px);
+    }
+        input.width__2,
+        input.btn {
+        width: calc(100% - 22px);
+    }
+    fieldset {
+        margin-bottom: 50px;
+    }
+        fieldset:last-of-type {
+        margin-bottom: 0;
+    }
+    legend {
+        margin-left: 10px;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    /* Navigation for desktop */
+    .hero {
+        background-attachment: fixed; /* Fiksirana pozicija za pozadinu koja daje paralax efekat pri skrolanju */
+    }
+
+    .unstyle-list {
+        display: inline; /* Na desktopu da pokaze horizontalnu navigaciju */
+    }
+
+    .hamburger {
+        display: none; /* Na minimalnoj sirini 992px da sakrije ikonicu za hamburger menu */
+    }
+
+    .headerLogo {
+        font-size: 5em; /* Na minimalnoj sirini 992px velicina fonta za logo*/
+    }
+
+    .nav {
+        float: right; /* Navigacija da bude float-ovana na desnu stranu */
+    }
+
+    .nav li {
+        float: left; /* Linkovi u navigaciji da budu float-ovani u levu stranu */
+    }
+
+    .nav a {
+        margin-left: 20px; /* Linkovi u navigaciji da budu odvojeni sa leve strane po 20px */
+    }
+    /* Section Hero */
+    .hero .container h1 {
+        font-size: 6em; /* H1 u hero seckiji da bude velicina fonta 6em na minimalnoj sirini od 992px */
+    }
+
+    /* Section Rooms */
+    .studio, /* Klasa studio */
+    .grand-suite, /* Klasa grand-suite */
+    .premium-suite { /* Klasa premium-suite */
+        width: 33.333333%; /* imaju sirinu 33.3333% */
+        float: left; /* Redjaju se sa leve strane jedna do druge */
+        padding: 0px 15px; /* Imaju uvlacenje po 15px sa leve i desne strane */
+    }
+
+    .studio p:nth-child(3), /* Treci child u klasi studio */
+    .grand-suite p:nth-child(3), /* Treci child u klasi grand-suite */
+    .premium-suite p:nth-child(3) { /* Treci child u klasi premium-suite */
+        min-height: 175px; /* Ima minimalnu visinu 175px */
+    }
+    
+    /* Section Menu */
+    .menuOne,
+    .menuTwo {
+        display: flex;
+        flex-flow: row; /* Da bude u redu posto je na mobilnom kolona */
+    }
+
+    .menu,
+    .menu-img {
+        width: 48%; /* Sirina je 48% */
+        float: left; /* Redjaju se na levu stranu jedan do drugog */
+    }
+
+    .menuOne :first-child, 
+    .menuTwo :first-child {
+        margin-right:2%;
+    }
+
+    .menu,
+    .menu-img {
+        order: 0; /* Resetujemo order jer je on podesen za telefon da menu-img bude uvek prvi */
+    }
+}
+
+/* ==========================================================================
    Helper classes
    ========================================================================== */
 
@@ -125,86 +768,85 @@ textarea {
  * Hide visually and from screen readers
  */
 
- .hidden {
-  display: none !important;
+.hidden {
+    display: none !important;
 }
 
 /*
-* Hide only visually, but have it available for screen readers:
-* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-*
-* 1. For long content, line feeds are not interpreted as spaces and small width
-*    causes content to wrap 1 word per line:
-*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
-*/
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
 
 .visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap; /* 1 */
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
 }
 
 /*
-* Extends the .visuallyhidden class to allow the element
-* to be focusable when navigated to via the keyboard:
-* https://www.drupal.org/node/897638
-*/
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
-  white-space: inherit;
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
 }
 
 /*
-* Hide visually and from screen readers, but maintain layout
-*/
+ * Hide visually and from screen readers, but maintain layout
+ */
 
 .invisible {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 /*
-* Clearfix: contain floats
-*
-* For modern browsers
-* 1. The space content is one way to avoid an Opera bug when the
-*    `contenteditable` attribute is included anywhere else in the document.
-*    Otherwise it causes space to appear at the top and bottom of elements
-*    that receive the `clearfix` class.
-* 2. The use of `table` rather than `block` is only necessary if using
-*    `:before` to contain the top-margins of child elements.
-*/
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
 
 .clearfix:before,
 .clearfix:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
+    content: " "; /* 1 */
+    display: table; /* 2 */
 }
 
 .clearfix:after {
-  clear: both;
+    clear: both;
 }
 
- 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
 
-   @media only screen and (min-width: 35em) {
+@media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
 
@@ -215,14 +857,13 @@ textarea {
     /* Style adjustments for high resolution devices */
 }
 
- 
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
    https://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 
-   @media print {
+@media print {
     *,
     *:before,
     *:after {
@@ -291,5 +932,3 @@ textarea {
         page-break-after: avoid;
     }
 }
-
-

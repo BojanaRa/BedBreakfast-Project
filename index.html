@@ -4,53 +4,232 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Restaurant web page</title>
+  <title>Bed & Breakfast</title>
   <meta name="description" content="We offer good and quality food">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
-  <link href="https://fonts.googleapis.com/css?family=Cookie|Zilla+Slab:300,400,400i,500,600" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/normalize.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+
+  <!-- Custom Css -->
   <link rel="stylesheet" href="css/main.css">
-
 </head>
 
 <body>
-  <header class="header container">
-    <a href="index.html" class="logo">Getaway</a>
-  <nav class="nav">
-    <ul class="unstyle-list">
-      <li><a href="">Home</a></li>
-      <li><a href="">Rooms</a></li>
-      <li><a href="">Menu</a></li>
-      <li><a href="">Gallery</a></li>
-      <li><a href="">Amenities</a></li>
-      <li><a href="">Contact</a></li>
-    </ul>
-  </nav>
-</header>
 
-<section class="hero">
-  <h1>Wanna get away?</h1>
-  <h1>Welcome to Getaway!</h1>
-  <button><a href="/book-a-room">BOOK A ROOM</a></button>
-</div>
+  <!-- Header -->
+  <header>
+    <div class="header">
+      <div class="container">
+        <a href="index.html" class="headerLogo">Getaway</a>
+        <nav class="nav">
+          <div class="menu-toggle">
+            <div class="hamburger"></div>
+          </div>
+          <ul class="unstyle-list">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="container">
+        <h1>Wanna get away? <br />
+          <span>Welcome to Getaway!</span></h1>
+        <a href="javascript;" class="reservation"><button class="ctaButton">Book a Room | <i class="fas fa-angle-right"></i></button></a>
+      </div>
+    </div>
+  </header>
 
-<section class="rooms">
-<div>
-  <h3>studio</h3>
-  <p>
-    
-  </p>
-</div>
+  <!-- Section Rooms -->
+  <section class="sectionRooms" id="rooms">
+    <div class="container">
+      <h2>Rooms</h2>
+      <div class="rooms clearfix">
+        <div class="studio">
+          <img src="img/picone.jpg" alt="Studio">
+          <h3>Studio</h3>
+          <p>Air-conditioned studio with a fully equipped kitchenette and a flat-screen TV. The bathroom comes with a
+            spacious shower cabin.</p>
+          <p>Price Per Night</p>
+          <p>$100</p>
+        </div>
+        <div class="grand-suite">
+          <img src="img/pictwo.jpg" alt="Grand Suite">
+          <h3>Grand Suite</h3>
+          <p>Spread over 2 floors, this air-conditioned apartment boasts a balcony or a terrace, a kitchen, coffee and
+            tea making facilities, a flat-screen TV with HDMI and USB connection, a minibar filled with 4 beverages,
+            and a bathroom with bathtub and hairdryer.</p>
+          <p>Price Per Night</p>
+          <p>$300</p>
+        </div>
+        <div class="premium-suite">
+          <img src="img/picthree.jpg" alt="Premium Suite">
+          <h3>Premium Suite</h3>
+          <p>The Level Premium Room come with a living area featuring a sofa, and a bathroom equipped with a rain
+            shower, a bath and premium Loewe toiletries. They are fitted with superior quality beds and linen, a
+            minibar, individual temperature control, a safe, and an IP interactive flat-screen TV.</p>
+          <p>Price Per Night</p>
+          <p>$600</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Section Menu -->
+  <section class="sectionMenu" id="menu">
+    <div class="container">
+      <h2>Menu</h2>
+      <div class="menuOne clearfix">
+        <div class="menu">
+          <p>Our goal is to get you off to a good start in the morning. All breakfasts are freshly cooked to order with
+            several vegetarian options.</p>
+          <p>Breakfast is normally served from 8:00 -10:00AM, if you require an early breakfast, kindly let us know.
+            We don’t schedule breakfast in order to offer our guests to the flexibility to come down and have
+            breakfast when it is best for themselves.</p>
+          <p>We are happy to provide gluten-free or other dietary needs. Please mention special needs when making your
+            reservation.</p>
+        </div>
+        <div class="menu menu-img">
+          <img src="img/menu-1.jpg" alt="Breake & Breakfast Main Menu">
+        </div>
+      </div>
+      <div class="menuTwo clearfix">
+        <div class="menu menu-img">
+          <img src="img/menu-2.jpg" alt="Breake & Breakfast Main Menu">
+        </div>
+        <div class="menu">
+          <h4>Breakfast in Bed</h4>
+          <p>Want breakfast in bed? Let us know! Contact the staff by 6pm the evening before and we will gladly bring
+            breakfast to you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Gallery -->
+  <section class="sectionGallery" id="gallery">
+    <h2>Gallery</h2>
+    <div class="slider">
+      <img src="img/gallery-1.jpg" alt="Gallery one">
+      <img src="img/gallery-2.jpg" alt="Gallery two">
+      <img src="img/gallery-3.jpg" alt="Gallery three">
+      <img src="img/gallery-4.jpg" alt="Gallery four">
+      <img src="img/gallery-5.jpg" alt="Gallery five">
+    </div>
+  </section>
+
+  <!-- Section Amenities -->
+  <section class="sectionAmenities" id="amenities">
+    <div class="container">
+      <h2>Amenities</h2>
+      <div class="additionalServices clearfix">
+        <div class="reception">
+          <img src="img/phone-icon.jpg" alt="24 h reception">
+          <p>24 h reception</p>
+        </div>
+        <div class="freeWifi">
+          <img src="img/wifi-icom.jpg" alt="Free Wi-Fi">
+          <p>Free Wi-Fi</p>
+        </div>
+        <div class="freeParking">
+          <img src="img/free-parking-icon.jpg" alt="Free parking">
+          <p>Free parking</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Contact -->
+  <section class="sectionContact" id="contact">
+    <div class="container clearfix">
+      <div class="contact-info">
+        <div class="info-center">
+          <h2>Contact</h2>
+          <p>Address: 7th avenue, <strong>New York</strong>, NY, USA</p>
+          <p>Questions about plans, pricing,<br />or availability?</p>
+          <p>Phone: <span>1-646-491-9060</span></p>
+          <p>Not quite ready to talk to someone?<br />
+            e-mail: <strong>contact@getaway.com</strong></p>
+          <p>Business Hours: <span>00-24h</span></p>
+          <a href="javascript;" class="reservation"><button class="ctaButton">Book a Room | <i class="fas fa-angle-right"></i></button></a>
+        </div>
+      </div>
+      <div class="google-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.465794366709!2d-73.99225828458928!3d40.75177884311802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259ac19b15cb5%3A0xed96b53834f934b2!2zN3RoIEF2ZSwgTmV3IFlvcmssIE5ZLCDQodGY0LXQtNC40ZrQtdC90LUg0JTRgNC20LDQstC1!5e0!3m2!1ssr!2srs!4v1552219752070"
+          width="100%" height="545.656px" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container clearfix">
+      <div class="footerLogo">
+        <a href="/">Getaway</a>
+        <p>&#9400; All Rights Reserved 2019</p>
+      </div>
+      <div class="footerSocial clearfix">
+        <ul class="social">
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Pinterest</a></li>
+          <li><a href="#">TripAdvisor</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+  <!-- Modal Booking CTA -->
+  <div class="modal">
+    <div class="modal-wrap text-center">
+      <div class="modal-inner">
+        <p class="headerLogo">Getaway</p>
+        <form>
+          <fieldset>
+            <legend>Booking information</legend>
+            <input type="nubmer" name="num-of-people" placeholder="Enter number of people" class="width__2">
+            <input type="date" name="res-date" placeholder="Select date:">
+            <input type="time" name="res-time" placeholder="Select time:">
+          </fieldset>
+          <fieldset>
+            <legend>Contact person</legend>
+            <input type="text" name="firstname-surname" placeholder="Enter name" class="width__2">
+            <input type="email" name="email" placeholder="Enter email address">
+            <input type="number" name="phone-num" placeholder="Enter phone number">
+            <input type="submit" value="Submit booking request" class="ctaButton">
+          </fieldset>
+        </form>
+        <button class="close">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
+
+  </script>
+  <script src="js/vendor/slick.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 </body>
